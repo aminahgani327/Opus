@@ -1,4 +1,4 @@
-opportunity_id, name,status,budget,required_roles,assigned_staff
+opportunity_id,name,status,budget,required_roles,assigned_staff
 OPP001,Project Alpha,signed,50000,developer|analyst,Jane Smith|Tom Brown
 OPP002,Project Beta,signed,30000,developer,
 OPP003,Project Gamma,pipeline,75000,developer|analyst|manager,

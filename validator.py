@@ -78,7 +78,7 @@ def _validate_single(opportunity: dict) -> list:
     Returns:
         list: A list of issue description strings. Empty if no issues found.
     """
-
+# Defensive access prevents runtime crashes if fields are missing
     issues = []
     status = opportunity["status"]
     budget = opportunity["budget"]
@@ -92,7 +92,7 @@ def _validate_single(opportunity: dict) -> list:
             f"Unrecognised status '{status}'. "
             f"Expected one of: {', '.join(VALID_STATUSES)}"
         )
-        return issues  # Return early — further checks are unreliable
+        return issues # Early return prevents further validation on unreliable data, improving both performance and accuracy of results
 
     # Rules 2-4 only apply to signed opportunities
     if status == "signed":

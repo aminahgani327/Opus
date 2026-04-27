@@ -19,7 +19,9 @@ def prompt_for_update(opportunity_index: dict) -> dict | None:
 
     The opportunity index (dictionary) is used here for O(1) lookup
     of the target opportunity by ID, avoiding the need to iterate
-    through the full list. (Cormen et al., 2022)
+    through the full list. While dictionaries provide fast lookup, they do not preserve ordering
+    of opportunities. In this context, ordering is not required, making
+    a dictionary the preferred structure over a list. (Cormen et al., 2022)
 
     Args:
         opportunity_index (dict): Dictionary of opportunity_id -> opportunity.
@@ -36,7 +38,8 @@ def prompt_for_update(opportunity_index: dict) -> dict | None:
         print("  Update cancelled.")
         return None
 
-    # Validate that the entered ID exists before proceeding
+# Dictionary lookup provides O(1) time complexity, ensuring efficient
+# retrieval even as the number of opportunities scales.
     if opp_id not in opportunity_index:
         print(f"  ✗ Opportunity ID '{opp_id}' not found. Please check the ID and try again.")
         return None

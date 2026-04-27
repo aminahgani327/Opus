@@ -9,9 +9,10 @@ Defensive programming approach:
 
 Data structure decision:
     A set is used to track unique staff IDs across all opportunities.
-    Sets provide O(1) average-case lookup and automatically enforce
-    uniqueness, making them more appropriate than lists for this purpose.
-    (Cormen et al., 2022)
+    # Trade-off:
+# Sets do not preserve order, unlike lists. However, ordering is not
+# required in this context, making a set more suitable for enforcing
+# uniqueness efficiently. (Cormen et al., 2022)
 """
 
 from loader import VALID_STATUSES

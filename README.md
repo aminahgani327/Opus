@@ -1,4 +1,3 @@
-# Opus
 # Opus — Opportunity Pipeline Tracker
 
 A Python backend tool for managing and validating commercial opportunity data within a technology services organisation. Opus ingests opportunity and resourcing data, validates records against defined business rules, flags pipeline gaps and staffing issues, and produces an actionable summary report.

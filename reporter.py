@@ -3,11 +3,10 @@ reporter.py — Opus Opportunity Tracker
 Responsible for generating output — both to the console and as a JSON file.
 
 Output format decision:
-    JSON was chosen as the output format over CSV because it preserves
-    nested data structures (lists of roles, lists of staff) without
-    requiring additional parsing on read. JSON is also the standard
-    interchange format for APIs and enterprise systems, making Opus
-    output directly consumable by downstream tools. (Crockford, 2008)
+    While JSON supports nested structures and interoperability,
+    it is less human-readable than formatted tabular outputs such
+    as CSV and results in larger file sizes. However, flexibility
+    and compatibility with modern systems were prioritised. (Crockford, 2008)
 """
 
 import json
@@ -33,7 +32,10 @@ def print_report(healthy: list, flagged: list, all_staff: set) -> None:
     if flagged:
         print(f"\n⚠  FLAGGED FOR ACTION ({len(flagged)} issue(s) found)\n")
         print("-" * 50)
-
+        
+# Iteration is performed once per dataset (O(n)), ensuring efficient
+# report generation without redundant processing.
+        
         for opp in flagged:
             print(f"\n  [{opp['opportunity_id']}] {opp['name']}")
             print(f"  Status : {opp['status'].upper()}")

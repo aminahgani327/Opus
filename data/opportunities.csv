@@ -1,0 +1,9 @@
+opportunity_id, name,status,budget,required_roles,assigned_staff
+OPP001,Project Alpha,signed,50000,developer|analyst,Jane Smith|Tom Brown
+OPP002,Project Beta,signed,30000,developer,
+OPP003,Project Gamma,pipeline,75000,developer|analyst|manager,
+OPP004,Project Delta,signed,,analyst,Sarah Jones
+OPP005,Project Epsilon,pipeline,20000,developer,
+OPP006,Project Zeta,closed,45000,developer|analyst,Alice Green|Bob White
+OPP007,Project Eta,signed,60000,developer|manager,Chris Black
+OPP008,Project Theta,invalid_status,10000,developer,Dan Grey
